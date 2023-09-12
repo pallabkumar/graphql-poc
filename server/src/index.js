@@ -1,7 +1,7 @@
-require('../node_modules_pk/dotenv').config();
+require('../node_modules/dotenv').config();
 
-const { ApolloServer } = require('../node_modules_pk/apollo-server');
-const { ApolloServerPluginLandingPageLocalDefault } = require('../node_modules_pk/apollo-server-core');
+const { ApolloServer } = require('../node_modules/apollo-server');
+const { ApolloServerPluginLandingPageLocalDefault } = require('../node_modules/apollo-server-core');
 
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');

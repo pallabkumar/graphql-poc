@@ -1,6 +1,7 @@
-const { gql } = require('../node_modules_pk/apollo-server');
+const { gql } = require('../node_modules/apollo-server');
 
 const typeDefs = gql`
+
   type Query {
     voyages(
       """
@@ -11,26 +12,38 @@ const typeDefs = gql`
       If you add a cursor here, it will only return results _after_ this cursor
       """
       page: Int
-    ): Voyages!
+    ): [Voyages!]
   }
 
-  """
-  Simple wrapper around our list of launches that contains a cursor to the
-  last item in the list. Pass this cursor to the launches query to fetch results
-  after these.
-  """
+  type VoyageItineraries {
+    createdByUser: String
+    creationTime: String
+    modifiedByUser: String
+    modificationTime: String
+    voyageItineraryId: String
+    voyageId: String
+    isSeaDay: Boolean
+    itineraryDay: Int
+    isDeleted: Boolean
+  }
+
   type Voyages {
-    voyages: [Voyage]!
-  }
-
-  type Voyage {
     id: ID!
-    voyageNumber: String!
-    voyageName: String!
-    embarkDate: String!
-    debarkDate: String!
-    shipCode: String!
-    brandCode: String
+    embarkDate: String
+    debarkDate: String
+    embarkPortCode: String
+    debarkPortCode: String
+    isActive: Boolean
+    isDeleted: Boolean
+    sailingPackageCode: String
+    shipCode: String
+    isVoyageRollover: Boolean
+    boardingMethod: String
+    isOCIEnabled: Boolean
+    isMOCIEnabled: Boolean
+    externalReferenceId: String
+    preSaveEnabled: Boolean
+    voyageItineraries: [VoyageItineraries]
   }
 `;
 

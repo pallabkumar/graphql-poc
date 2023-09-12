@@ -1,4 +1,4 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const { RESTDataSource } = require('../../node_modules_pk/apollo-datasource-rest');
 
 class VoyageAPI extends RESTDataSource {
   constructor() {

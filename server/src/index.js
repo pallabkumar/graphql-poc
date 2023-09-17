@@ -7,10 +7,12 @@ const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
 const VoyageAPI = require('./datasources/voyage');
+const GuestAPI = require('./datasources/guest');
 
 // set up any dataSources our resolvers need
 const dataSources = () => ({
   voyageAPI: new VoyageAPI(),
+  guestAPI: new GuestAPI(),
 });
 
 // Set up Apollo Server

@@ -9,6 +9,8 @@ const resolvers = require('./resolvers');
 const VoyageAPI = require('./datasources/voyage');
 const GuestAPI = require('./datasources/guest');
 
+const { context } = require('./context/graphQLContext');
+
 // set up any dataSources our resolvers need
 const dataSources = () => ({
   voyageAPI: new VoyageAPI(),
@@ -20,7 +22,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources,
-  introspection: true,
+  context,
   apollo: {
     key: process.env.APOLLO_KEY,
   },

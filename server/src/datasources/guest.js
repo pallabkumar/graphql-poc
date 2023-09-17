@@ -1,6 +1,6 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
-const { getIamClientToken } = require('../tokenUtils');
-const { DXPCORE_URL } = require('../config');
+const { getIamClientToken } = require('../utils/tokenUtils');
+const { DXPCORE_URL } = require('../utils/config');
 
 class GuestAPI extends RESTDataSource {
   constructor() {

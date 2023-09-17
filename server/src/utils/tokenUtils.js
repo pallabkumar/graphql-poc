@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { CLIENT_ID, CLIENT_SECRET, IAM_SERVICE_URL } = require("./Config");
+const { CLIENT_ID, CLIENT_SECRET, IAM_SERVICE_URL } = require("./config");
 const NodeCache = require('node-cache');
 const { get } = require('lodash');
 

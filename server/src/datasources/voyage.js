@@ -1,6 +1,6 @@
 const { RESTDataSource } = require('../../node_modules/apollo-datasource-rest');
-const { getIamClientToken } = require('../tokenUtils');
-const { DXPCORE_URL } = require('../config');
+const { getIamClientToken } = require('../utils/tokenUtils');
+const { DXPCORE_URL } = require('../utils/config');
 
 class VoyageAPI extends RESTDataSource {
   constructor() {
